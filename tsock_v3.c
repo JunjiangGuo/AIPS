@@ -254,7 +254,13 @@ void main (int argc, char **argv)
 			printf("nb de tampons à envoyer = 10 par défaut\n");
 		} else
 		printf("nb de tampons à envoyer = infini\n");
+    }
 
-	}
+    for (int n=0;n<3;n++){
+        if (shutdown(sock,n) == -1){
+            printf("échec de shut down\n");
+            exit(1);
+        }
+    }
 }
 
